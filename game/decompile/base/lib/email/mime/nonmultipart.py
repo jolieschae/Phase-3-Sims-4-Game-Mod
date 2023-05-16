@@ -1,0 +1,16 @@
+# uncompyle6 version 3.9.0
+# Python bytecode version base 3.7.0 (3394)
+# Decompiled from: Python 3.7.16 (default, May 16 2023, 11:05:37) 
+# [Clang 13.0.0 (clang-1300.0.29.30)]
+# Embedded file name: T:\InGame\Gameplay\Scripts\Lib\email\mime\nonmultipart.py
+# Compiled at: 2018-06-26 23:07:36
+# Size of source mod 2**32: 713 bytes
+__all__ = [
+ 'MIMENonMultipart']
+from email import errors
+from email.mime.base import MIMEBase
+
+class MIMENonMultipart(MIMEBase):
+
+    def attach(self, payload):
+        raise errors.MultipartConversionError('Cannot attach additional subparts to non-multipart/*')
